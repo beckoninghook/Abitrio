@@ -7,3 +7,12 @@ c:\users\niels\documents\visual studio 2015\Projects\Abitrio\Abitrio\obj\Debug\A
 c:\users\niels\documents\visual studio 2015\Projects\Abitrio\Abitrio\obj\Debug\Abitrio.csproj.GenerateResource.Cache
 c:\users\niels\documents\visual studio 2015\Projects\Abitrio\Abitrio\obj\Debug\Abitrio.exe
 c:\users\niels\documents\visual studio 2015\Projects\Abitrio\Abitrio\obj\Debug\Abitrio.pdb
+C:\Users\Niels\Documents\GitHub\Abitrio\Abitrio\bin\Debug\Abitrio.exe.config
+C:\Users\Niels\Documents\GitHub\Abitrio\Abitrio\obj\Debug\Abitrio.exe
+C:\Users\Niels\Documents\GitHub\Abitrio\Abitrio\obj\Debug\Abitrio.pdb
+C:\Users\Niels\Documents\GitHub\Abitrio\Abitrio\bin\Debug\Abitrio.exe
+C:\Users\Niels\Documents\GitHub\Abitrio\Abitrio\bin\Debug\Abitrio.pdb
+C:\Users\Niels\Documents\GitHub\Abitrio\Abitrio\obj\Debug\Abitrio.csprojResolveAssemblyReference.cache
+C:\Users\Niels\Documents\GitHub\Abitrio\Abitrio\obj\Debug\Abitrio.Game.resources
+C:\Users\Niels\Documents\GitHub\Abitrio\Abitrio\obj\Debug\Abitrio.Properties.Resources.resources
+C:\Users\Niels\Documents\GitHub\Abitrio\Abitrio\obj\Debug\Abitrio.csproj.GenerateResource.Cache

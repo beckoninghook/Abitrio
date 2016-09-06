@@ -23,6 +23,11 @@ namespace Abitrio
         bool left;
         bool up;
         bool down;
+
+        bool rightBoost;
+        bool leftBoost;
+        bool upBoost;
+        bool downBoost;
         ///////////
 
         //PLANETS//
@@ -51,20 +56,11 @@ namespace Abitrio
         int rdm9y;
         int rdm10y;
 
-        string spaceobj1;
-        string spaceobj2;
-        string spaceobj3;
-        string spaceobj4;
-        string spaceobj5;
-        string spaceobj6;
-        string spaceobj7;
-        string spaceobj8;
-        string spaceobj9;
-        string spaceobj10;
+     
 
         public Game()
         {
-           
+
 
             InitializeComponent();
         }
@@ -89,7 +85,7 @@ namespace Abitrio
         private void amountplanets()
         {
             Random rndp = new Random();
-            amount = /*rndp.Next(0, 10);*/ 2;
+            amount = rndp.Next(0, 10);
 
 
             if (amount == 1)
@@ -243,7 +239,7 @@ namespace Abitrio
         private void gnrCoord()
         {
             Random rnd = new Random();
-            
+
 
             rdm1x = rnd.Next(0, 640);
             rdm2x = rnd.Next(0, 640);
@@ -267,59 +263,50 @@ namespace Abitrio
             rdm9y = rnd.Next(0, 380);
             rdm10y = rnd.Next(0, 380);
 
-            spaceobj1 = rdm1x.ToString() + "," + rdm1y.ToString();
-            spaceobj2 = rdm2x.ToString() + "," + rdm2y.ToString();
-            spaceobj3 = rdm3x.ToString() + "," + rdm3y.ToString();
-            spaceobj4 = rdm4x.ToString() + "," + rdm4y.ToString();
-            spaceobj5 = rdm5x.ToString() + "," + rdm5y.ToString();
-            spaceobj6 = rdm6x.ToString() + "," + rdm6y.ToString();
-            spaceobj7 = rdm7x.ToString() + "," + rdm7y.ToString();
-            spaceobj8 = rdm8x.ToString() + "," + rdm8y.ToString();
-            spaceobj9 = rdm9x.ToString() + "," + rdm9y.ToString();
-            spaceobj10 = rdm10x.ToString() + "," + rdm10y.ToString();
+          
 
-            rdmobj1.Text = spaceobj1;
-            rdmobj2.Text = spaceobj2;
-            rdmobj3.Text = spaceobj3;
-            rdmobj4.Text = spaceobj4;
-            rdmobj5.Text = spaceobj5;
-            rdmobj6.Text = spaceobj6;
-            rdmobj7.Text = spaceobj7;
-            rdmobj8.Text = spaceobj8;
-            rdmobj9.Text = spaceobj9;
-            rdmobj10.Text = spaceobj10;
-
-            planet1.Left = rdm1x;
+            planet1.Left = rdm1x + planet10.Width / 2;
             planet1.Top = rdm1y;
 
-            planet2.Left = rdm2x;
+            planet2.Left = rdm2x + planet10.Width / 2;
             planet2.Top = rdm2y;
 
-            planet3.Left = rdm3x;
+            planet3.Left = rdm3x + planet10.Width / 2;
             planet3.Top = rdm3y;
 
-            planet4.Left = rdm4x;
+            planet4.Left = rdm4x + planet10.Width / 2;
             planet4.Top = rdm4y;
 
-            planet5.Left = rdm5x;
+            planet5.Left = rdm5x + planet10.Width / 2;
             planet5.Top = rdm5y;
 
-            planet6.Left = rdm6x;
+            planet6.Left = rdm6x + planet10.Width / 2;
             planet6.Top = rdm6y;
 
-            planet7.Left = rdm7x;
+            planet7.Left = rdm7x + planet10.Width / 2;
             planet7.Top = rdm7y;
 
-            planet8.Left = rdm8x;
+            planet8.Left = rdm8x + planet10.Width / 2;
             planet8.Top = rdm8y;
 
-            planet9.Left = rdm9x;
+            planet9.Left = rdm9x + planet10.Width / 2;
             planet9.Top = rdm9y;
 
-            planet10.Left = rdm10x;
+            planet10.Left = rdm10x + planet10.Width / 2;
             planet10.Top = rdm10y;
 
-            
+
+            rdmobj1.Text = planet1.Left.ToString() + "," + planet1.Top.ToString();
+            rdmobj2.Text = planet2.Left.ToString() + "," + planet2.Top.ToString();
+            rdmobj3.Text = planet3.Left.ToString() + "," + planet3.Top.ToString();
+            rdmobj4.Text = planet4.Left.ToString() + "," + planet4.Top.ToString();
+            rdmobj5.Text = planet5.Left.ToString() + "," + planet5.Top.ToString();
+            rdmobj6.Text = planet6.Left.ToString() + "," + planet6.Top.ToString();
+            rdmobj7.Text = planet7.Left.ToString() + "," + planet7.Top.ToString();
+            rdmobj8.Text = planet8.Left.ToString() + "," + planet8.Top.ToString();
+            rdmobj9.Text = planet9.Left.ToString() + "," + planet9.Top.ToString();
+            rdmobj10.Text = planet10.Left.ToString() + "," + planet10.Top.ToString();
+
 
         }
 
@@ -357,6 +344,30 @@ namespace Abitrio
                 ship.Top += 1;
             }
 
+            /////////////////////////
+            //////////BOOST//////////
+            /////////////////////////
+
+            if (rightBoost == true)
+            {
+                ship.Left += 5;
+            }
+
+            if (leftBoost == true)
+            {
+                ship.Left -= 5;
+            }
+
+            if (upBoost == true)
+            {
+                ship.Top -= 5;
+            }
+
+            if (downBoost == true)
+            {
+                ship.Top += 5;
+            }
+
             detectlocation();
 
 
@@ -364,6 +375,32 @@ namespace Abitrio
 
         private void Game_KeyDown(object sender, KeyEventArgs e)
         {
+            //////////////////////BOOST//////////////////////////
+
+            if (e.KeyCode == Keys.Right && e.Modifiers == Keys.Control || e.KeyCode == Keys.D && e.Modifiers == Keys.Control)
+            {
+                rightBoost = true;
+            }
+
+            if (e.KeyCode == Keys.Left && e.Modifiers == Keys.Control || e.KeyCode == Keys.A && e.Modifiers == Keys.Control)
+            {
+
+                leftBoost = true;
+            }
+
+            if (e.KeyCode == Keys.Up && e.Modifiers == Keys.Control || e.KeyCode == Keys.W && e.Modifiers == Keys.Control)
+            {
+                upBoost = true;
+            }
+
+            if (e.KeyCode == Keys.Down && e.Modifiers == Keys.Control || e.KeyCode == Keys.S && e.Modifiers == Keys.Control)
+            {
+                downBoost = true;
+            }
+
+            ////////////////////////////////////////////////////////
+
+
             if (e.KeyCode == Keys.Right || e.KeyCode == Keys.D)
             {
                 right = true;
@@ -391,17 +428,40 @@ namespace Abitrio
 
             if (e.KeyCode == Keys.Back)
             {
-               
+
                 gnrCoord();
                 amountplanets();
                 lblAmount.Text = Convert.ToString(amount);
-                
+
                 overlapsefix();
             }
         }
 
         private void Game_KeyUp(object sender, KeyEventArgs e)
         {
+            if (e.KeyCode == Keys.Right && e.Modifiers == Keys.Control || e.KeyCode == Keys.D && e.Modifiers == Keys.Control)
+            {
+                rightBoost = false;
+            }
+
+            if (e.KeyCode == Keys.Left && e.Modifiers == Keys.Control || e.KeyCode == Keys.A && e.Modifiers == Keys.Control)
+            {
+
+                leftBoost = false;
+            }
+
+            if (e.KeyCode == Keys.Up && e.Modifiers == Keys.Control || e.KeyCode == Keys.W && e.Modifiers == Keys.Control)
+            {
+                upBoost = false;
+            }
+
+            if (e.KeyCode == Keys.Down && e.Modifiers == Keys.Control || e.KeyCode == Keys.S && e.Modifiers == Keys.Control)
+            {
+                downBoost = false;
+            }
+
+
+
             if (e.KeyCode == Keys.Right || e.KeyCode == Keys.D)
             {
                 right = false;
@@ -429,66 +489,103 @@ namespace Abitrio
             up = false;
             left = false;
             right = false;
-                           
+
         }
 
         private void detectlocation()
         {
+            rdmobj1.Text = Convert.ToString(planet1.Left + planet1.Width / 2) + "," + Convert.ToString(planet1.Top + planet1.Height/2) ;
 
-            if (ship.Left == planet1.Left && ship.Top == planet1.Top)
+            if (ship.Left == planet1.Left + planet1.Width/2 && ship.Top == planet1.Top + planet1.Height/2  )
             {
                 lblInfo.Text = "obj 1" + "\n" + "x=" + Convert.ToString(planet1.Left) + "\n" + "y=" + Convert.ToString(planet1.Top);
+             
             }
+         
 
-            if (ship.Left == planet2.Left && ship.Top == planet2.Top)
+            if (ship.Left == planet2.Left && ship.Top == planet2.Top )
             {
                 lblInfo.Text = "obj 2" + "\n" + "x=" + Convert.ToString(planet2.Left) + "\n" + "y=" + Convert.ToString(planet2.Top);
             }
-
-
-            if (ship.Left == planet3.Left && ship.Top == planet3.Top)
+            else
             {
-                lblInfo.Text = "obj 3" + "\n" + "x=" + Convert.ToString(planet3.Left) + "\n" + "y=" + Convert.ToString(planet3.Top);
+                lblInfo.Text = "...";
             }
 
 
-            if (ship.Left == planet4.Left && ship.Top == planet4.Top)
+            if (ship.Left == planet3.Left + planet3.Width / 2 && ship.Top == planet3.Top + planet3.Height / 2)
+            {
+                lblInfo.Text = "obj 3" + "\n" + "x=" + Convert.ToString(planet3.Left) + "\n" + "y=" + Convert.ToString(planet3.Top);
+            }
+            else
+            {
+                lblInfo.Text = "...";
+            }
+
+
+            if (ship.Left == planet4.Left + planet4.Width / 2 && ship.Top == planet4.Top + planet4.Height / 2)
             {
                 lblInfo.Text = "obj 4" + "\n" + "x=" + Convert.ToString(planet4.Left) + "\n" + "y=" + Convert.ToString(planet4.Top);
 
             }
+            else
+            {
+                lblInfo.Text = "...";
+            }
 
-
-            if (ship.Left == planet5.Left && ship.Top == planet5.Top)
+            if (ship.Left == planet5.Left + planet5.Width / 2 && ship.Top == planet5.Top + planet5.Height / 2)
             {
                 lblInfo.Text = "obj 5" + "\n" + "x=" + Convert.ToString(planet5.Left) + "\n" + "y=" + Convert.ToString(planet5.Top);
 
             }
+            else
+            {
+                lblInfo.Text = "...";
+            }
 
-            if (ship.Left == planet6.Left && ship.Top == planet6.Top)
+            if (ship.Left == planet6.Left + planet6.Width / 2 && ship.Top == planet6.Top + planet6.Height / 2)
             {
                 lblInfo.Text = "obj 6" + "\n" + "x=" + Convert.ToString(planet6.Left) + "\n" + "y=" + Convert.ToString(planet6.Top);
             }
+            else
+            {
+                lblInfo.Text = "...";
+            }
 
-
-            if (ship.Left == planet7.Left && ship.Top == planet7.Top)
+            if (ship.Left == planet7.Left + planet7.Width / 2 && ship.Top == planet7.Top + planet7.Height / 2)
             {
                 lblInfo.Text = "obj 7" + "\n" + "x=" + Convert.ToString(planet7.Left) + "\n" + "y=" + Convert.ToString(planet7.Top);
             }
+            else
+            {
+                lblInfo.Text = "...";
+            }
 
-            if (ship.Left == planet8.Left && ship.Top == planet8.Top)
+            if (ship.Left == planet8.Left + planet8.Width / 2 && ship.Top == planet8.Top + planet8.Height / 2)
             {
                 lblInfo.Text = "obj 8" + "\n" + "x=" + Convert.ToString(planet8.Left) + "\n" + "y=" + Convert.ToString(planet8.Top);
             }
+            else
+            {
+                lblInfo.Text = "...";
+            }
 
-            if (ship.Left == planet9.Left && ship.Top == planet9.Top)
+            if (ship.Left == planet9.Left + planet9.Width / 2 && ship.Top == planet9.Top + planet9.Height / 2)
             {
                 lblInfo.Text = "obj 9" + "\n" + "x=" + Convert.ToString(planet9.Left) + "\n" + "y=" + Convert.ToString(planet9.Top);
             }
+            else
+            {
+                lblInfo.Text = "...";
+            }
 
-            if (ship.Left == planet10.Left && ship.Top == planet10.Top)
+            if (ship.Left == planet10.Left + planet10.Width / 2 && ship.Top == planet10.Top + planet10.Height / 2)
             {
                 lblInfo.Text = "obj 10" + "\n" + "x=" + Convert.ToString(planet10.Left) + "\n" + "y=" + Convert.ToString(planet10.Top);
+            }
+            else
+            {
+                lblInfo.Text = "...";
             }
         }
 

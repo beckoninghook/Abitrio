@@ -215,7 +215,7 @@
             // 
             this.rdmobj4.AutoSize = true;
             this.rdmobj4.ForeColor = System.Drawing.Color.White;
-            this.rdmobj4.Location = new System.Drawing.Point(86, 124);
+            this.rdmobj4.Location = new System.Drawing.Point(30, 100);
             this.rdmobj4.Name = "rdmobj4";
             this.rdmobj4.Size = new System.Drawing.Size(41, 13);
             this.rdmobj4.TabIndex = 10;
@@ -235,7 +235,7 @@
             // 
             this.rdmobj8.AutoSize = true;
             this.rdmobj8.ForeColor = System.Drawing.Color.White;
-            this.rdmobj8.Location = new System.Drawing.Point(86, 100);
+            this.rdmobj8.Location = new System.Drawing.Point(86, 78);
             this.rdmobj8.Name = "rdmobj8";
             this.rdmobj8.Size = new System.Drawing.Size(35, 13);
             this.rdmobj8.TabIndex = 8;
@@ -245,7 +245,7 @@
             // 
             this.rdmobj7.AutoSize = true;
             this.rdmobj7.ForeColor = System.Drawing.Color.White;
-            this.rdmobj7.Location = new System.Drawing.Point(36, 100);
+            this.rdmobj7.Location = new System.Drawing.Point(86, 59);
             this.rdmobj7.Name = "rdmobj7";
             this.rdmobj7.Size = new System.Drawing.Size(35, 13);
             this.rdmobj7.TabIndex = 7;
@@ -255,7 +255,7 @@
             // 
             this.rdmobj9.AutoSize = true;
             this.rdmobj9.ForeColor = System.Drawing.Color.White;
-            this.rdmobj9.Location = new System.Drawing.Point(86, 78);
+            this.rdmobj9.Location = new System.Drawing.Point(86, 100);
             this.rdmobj9.Name = "rdmobj9";
             this.rdmobj9.Size = new System.Drawing.Size(35, 13);
             this.rdmobj9.TabIndex = 6;
@@ -265,7 +265,7 @@
             // 
             this.rdmobj6.AutoSize = true;
             this.rdmobj6.ForeColor = System.Drawing.Color.White;
-            this.rdmobj6.Location = new System.Drawing.Point(36, 78);
+            this.rdmobj6.Location = new System.Drawing.Point(86, 34);
             this.rdmobj6.Name = "rdmobj6";
             this.rdmobj6.Size = new System.Drawing.Size(35, 13);
             this.rdmobj6.TabIndex = 5;
@@ -275,7 +275,7 @@
             // 
             this.rdmobj1.AutoSize = true;
             this.rdmobj1.ForeColor = System.Drawing.Color.White;
-            this.rdmobj1.Location = new System.Drawing.Point(86, 56);
+            this.rdmobj1.Location = new System.Drawing.Point(36, 34);
             this.rdmobj1.Name = "rdmobj1";
             this.rdmobj1.Size = new System.Drawing.Size(35, 13);
             this.rdmobj1.TabIndex = 4;
@@ -285,7 +285,7 @@
             // 
             this.rdmobj10.AutoSize = true;
             this.rdmobj10.ForeColor = System.Drawing.Color.White;
-            this.rdmobj10.Location = new System.Drawing.Point(36, 56);
+            this.rdmobj10.Location = new System.Drawing.Point(86, 124);
             this.rdmobj10.Name = "rdmobj10";
             this.rdmobj10.Size = new System.Drawing.Size(35, 13);
             this.rdmobj10.TabIndex = 3;
@@ -295,7 +295,7 @@
             // 
             this.rdmobj3.AutoSize = true;
             this.rdmobj3.ForeColor = System.Drawing.Color.White;
-            this.rdmobj3.Location = new System.Drawing.Point(86, 34);
+            this.rdmobj3.Location = new System.Drawing.Point(36, 78);
             this.rdmobj3.Name = "rdmobj3";
             this.rdmobj3.Size = new System.Drawing.Size(35, 13);
             this.rdmobj3.TabIndex = 2;
@@ -305,7 +305,7 @@
             // 
             this.rdmobj2.AutoSize = true;
             this.rdmobj2.ForeColor = System.Drawing.Color.White;
-            this.rdmobj2.Location = new System.Drawing.Point(36, 34);
+            this.rdmobj2.Location = new System.Drawing.Point(36, 53);
             this.rdmobj2.Name = "rdmobj2";
             this.rdmobj2.Size = new System.Drawing.Size(35, 13);
             this.rdmobj2.TabIndex = 1;
